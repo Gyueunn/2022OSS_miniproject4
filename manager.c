@@ -150,3 +150,23 @@ void searchPrice(Product *p, int count){
     else printf("=> 찾았음!");
     printf("\n");
 }
+void searchDelivery(Product *p, int count){
+    int num;
+    int no;
+
+    num=0;
+    printf("검색할 제품의 배송방법은?(1: 새벽/2: 택배)? ");
+    scanf("%d", &no);
+    printf("*****************\n");
+    for(int i=0; i<count; i++){
+        if(p[i].price==-1) continue;
+        if(no==p[i].delivery){
+            printf("%2d ", i+1);
+            readProduct(p[i]);
+            num++;
+        }
+    }
+    if(num==0) printf("=> 검색된 데이터 없음!");
+    else printf("=> 찾았음!");
+    printf("\n");
+}
