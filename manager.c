@@ -79,3 +79,22 @@ int deleteProduct(Product *p){ //삭제
     p->price = -1;
     return 1;
 }
+int loadData(Product *p){
+    int count=0;
+    int i=0;
+    FILE*data;
+    if((data=fopen("Product.txt", "rt"))){
+        for(i=0; i<20; i++){
+            fscanf(data, "%s", p[i].name);
+            if(feof(data)) break;
+            fscanf(data, "%s", p[i].weight);
+            fscanf(data, "%d", &p[i].price);
+            fscanf(data, "%d", &p[i].delivery);
+            fscanf(data, "%[^\n]s", p[i].data);
+        }
+        fclose(data);
+        printf("=> 로딩 성공!\n");
+    }
+    else printf("=> 파일 없음\n");
+    return i;
+}
