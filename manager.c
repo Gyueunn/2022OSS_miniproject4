@@ -57,11 +57,6 @@ int updateProduct(Product *p){ //수정
     printf("새 제품의 이름은? ");
     getchar();
     scanf("%[^\n]s", p->name);
-    printf("제품의 중량은? ");
-    scanf("%s", p->name);
-    printf("제품의 중량은? ");
-    fgets(p->name, 80, stdin);
-    p->name[strlen(p->name)-1]='\0';
     printf("새 제품의 중량은? ");
     scanf("%s", p->weight);
     printf("새 가격은? ");
