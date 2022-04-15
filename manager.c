@@ -131,3 +131,22 @@ void searchName(Product *p, int count){
     else printf("=> 찾았음!");
     printf("\n");
 }
+void searchPrice(Product *p, int count){
+    int num;
+    int mon;
+
+    printf("검색할 가격은? ");
+    scanf("%d", &mon);
+    printf("*****************\n");
+    for(int i=0; i<count; i++){
+        if(p[i].price==-1) continue;
+        if(mon==p[i].price){
+            printf("%2d ", i+1);
+            readProduct(p[i]);
+            num++;
+        }
+    }
+    if(num==0) printf("=> 검색된 데이터 없음!");
+    else printf("=> 찾았음!");
+    printf("\n");
+}
