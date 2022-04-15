@@ -98,3 +98,15 @@ int loadData(Product *p){
     else printf("=> 파일 없음\n");
     return i;
 }
+void saveData(Product *p, int count){
+    int i;
+    FILE* data;
+    data=fopen("Product.txt", "wt");
+    for(i=0; i<count; i++){
+        if(p[i].price!=-1){
+            fprintf(data, "%s %s %d %d %s\n", p[i].name, p[i].weight, p[i].price, p[i].delivery, p[i].data);
+        }
+    }
+    fclose(data);
+    printf("=> 저장됨!\n");
+}
