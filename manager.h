@@ -18,3 +18,4 @@ int deleteProduct(Product *p);
 int loadData(Product *p);
 int loadData(Product *p);
 int loadData(Product *p);
+int loadData(Product *p);
