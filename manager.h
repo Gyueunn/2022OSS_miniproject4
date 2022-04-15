@@ -16,8 +16,3 @@ int selectDataNo(Product *p, int count);
 int updateProduct(Product *p);
 int deleteProduct(Product *p);
 int loadData(Product *p);
-void saveData(Product *p, int count);
-void searchName(Product *p, int count);
-void searchPrice(Product *p, int count);
-void searchDelivery(Product *p, int count);
-
