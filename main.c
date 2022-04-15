@@ -21,7 +21,7 @@ int main(void){
             }
 	    else printf("=> 조회된 제품 없음!\n");
         }
-        else if (menu == 2){
+	else if (menu == 2){
             count+=addProduct(&p[index++]);
             printf("=> 추가됨!\n");
 
