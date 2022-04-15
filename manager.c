@@ -110,3 +110,24 @@ void saveData(Product *p, int count){
     fclose(data);
     printf("=> 저장됨!\n");
 }
+void searchName(Product *p, int count){
+    int num;
+    char search[80];
+
+    printf("검색할 제품의 이름은? ");
+    getchar();
+    fgets(search, 80, stdin);
+    search[strlen(search)-1]='\0';
+    printf("*****************\n");
+    for(int i=0; i<count; i++){
+        if(p[i].price==-1) continue;
+        if(strstr(p[i].name, search)){
+            printf("%2d ", i+1);
+            readProduct(p[i]);
+            num++;
+        }
+    }
+    if(num==0) printf("=> 검색된 데이터 없음!");
+    else printf("=> 찾았음!");
+    printf("\n");
+}
